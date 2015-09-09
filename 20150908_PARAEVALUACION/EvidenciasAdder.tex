@@ -1,0 +1,153 @@
+\documentclass[12pt]{article}
+%Este documento pretende ser un programa para calcular 
+%la calificación de un discente a medida que el autor 
+%va editando el mismo y se buscará generar una tabla 
+%que muestre las calificaciones de los discentes.
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+
+\def\Centrar#1{\begin{center}#1\end{center}}
+\def\GRUPO{3MV7}
+%Se utilizaran variables contador de \TeX
+\newcount\NumDEvid
+\NumDEvid=-1
+\def\Evidencia#1{
+{\global\advance\NumDEvid by 1}
+{\large\bf Evidencia \the\NumDEvid: #1}
+}
+
+\newcount\ChavezCortesVictorEvidCount
+\ChavezCortesVictorEvidCount=0
+
+%@param #1: puede ser una observacion o una calificación
+\def\EvidenciaChavezCortes#1{
+\global\advance\ChavezCortesVictorEvidCount by 1
+Chávez Cortes Víctor&#1\\\hline
+}
+
+\newcount\AntonioCoutinioDanielEvidCount
+\AntonioCoutinioDanielEvidCount=0
+\def\EvidenciaAntonioCoutinio#1{
+\global\advance\AntonioCoutinioDanielEvidCount by 1
+Antonio Couti\~no Daniel De Jesús&#1\\\hline
+}
+
+\newcount\RomoGarciaMiguelEvidCount
+\RomoGarciaMiguelEvidCount=0
+\def\EvidenciaRomoGarcia#1{
+\global\advance\RomoGarciaMiguelEvidCount by 1
+Romo García Miguel Angel&#1\\\hline
+}
+
+\newcount\CadenaDiazDanielEvidCount
+\CadenaDiazDanielEvidCount=0
+\def\EvidenciaCadenaDiaz#1{
+\global\advance\CadenaDiazDanielEvidCount by 1
+Cadena Díaz Daniel&#1\\\hline
+}
+
+\newcount\GijonLeyvaErickEvidCount
+\GijonLeyvaErickEvidCount=0
+\def\EvidenciaGijonLeyva#1{
+\global\advance\GijonLeyvaErickEvidCount by 1
+Gijón Leyva Erick Servando&#1\\\hline
+}
+
+\newcount\SolanoJuarezJoseEvidCount
+\SolanoJuarezJoseEvidCount=0
+\def\EvidenciaSolanoJuarez#1{
+\global\advance\SolanoJuarezJoseEvidCount by 1
+Solano Juárez José Santiago&#1\\\hline
+}
+
+\newcount\FrancoGarciaOswaldoEvidCount
+\FrancoGarciaOswaldoEvidCount=0
+\def\EvidenciaFrancoGarcia#1{
+\global\advance\FrancoGarciaOswaldoEvidCount by 1
+Franco García Oswaldo Ignacio&#1\\\hline
+}
+
+\newcount\VazquezHernandezJorgeEvidCount
+\VazquezHernandezJorgeEvidCount=0
+\def\EvidenciaVazquezHernandez#1{
+\global\advance\VazquezHernandezJorgeEvidCount by 1
+Vazquez Hernández Jorge&#1\\\hline
+}
+
+\newcount\LeonJuanJavierEvidCount
+\LeonJuanJavierEvidCount=0
+\def\EvidenciaLeonJuan#1{
+\global\advance\LeonJuanJavierEvidCount by 1
+León Juan Javier&#1\\\hline
+}
+%DiazDuran
+\newcount\DiazDuranOmarEvidCount
+\DiazDuranOmarEvidCount=0
+\def\EvidenciaDiazDuran#1{
+\global\advance\DiazDuranOmarEvidCount by 1
+Díaz Duran Omar&#1\\\hline
+}
+
+\newcount\OrtizTorresErickEvidCount
+\OrtizTorresErickEvidCount=0
+\def\EvidenciaOrtizTorres#1{
+\global\advance\OrtizTorresErickEvidCount by 1
+Ortiz Torres Erick&#1\\\hline
+}
+
+\newcount\ParraHernandezVictorEvidCount
+\ParraHernandezVictorEvidCount=0
+\def\EvidenciaParraHernandez#1{
+\global\advance\ParraHernandezVictorEvidCount by 1
+Parra Hernández Víctor Manuel&#1\\\hline
+}
+
+\begin{document}
+%\hspace{\fill}México D.F. \today\\
+\hspace{\fill}México D.F. Martes 8 de septiembre de 2015\\
+%\vspace{.25in}
+\vskip.25in
+\noindent{\large\bf \GRUPO\\
+%{\large\bf \GRUPO\\
+SISTEMAS OPERATIVOS EN TIEMPO REAL}\\
+%México D.F. \today\par
+\vskip.25in
+\noindent\Evidencia{Macros $\_$CRTIMP y $\_\_$cdecl}\par
+Se pidió a los discentes buscar el signif\/icado de las 
+macros $\_$CRTIMP y $\_\_$cdecl. También se planteó el 
+primer ejercicio reto del curso: Se pide encontrar una 
+manera (usando directivas del preprocesador) de contar 
+cuántas veces se incluye un archivo a sí mismo antes de 
+provocar que el preprocesador aborte.\par
+Evidencias \the\NumDEvid\ recibidas (en tiempo y forma):\par
+\Centrar{
+\begin{tabular}{|l|p{2in}|}\hline
+\EvidenciaAntonioCoutinio{$\_\_$cdecl??}
+\EvidenciaCadenaDiaz{\#define $\_$CRTIMP   $\_$declspec(dllimport)}
+\EvidenciaChavezCortes{$\_\_$WIN32$\_\_$??}
+\EvidenciaDiazDuran{}
+\EvidenciaGijonLeyva{$\_$WIN32 el más usual}
+\EvidenciaFrancoGarcia{$\_$WIN32??}
+\EvidenciaLeonJuan{}
+\EvidenciaOrtizTorres{}
+\EvidenciaParraHernandez{}
+\EvidenciaRomoGarcia{$\_$WIN16 (para 16 bits),  $\_$WIN32 
+(para 16?? y 64 bits), 
+$\_\_$WIN64$\_\_$ (para 64 bits), 
+$\_$WINDOWS$\_$ (para Watcom C/C++)}
+\EvidenciaSolanoJuarez{$\approx$}
+\EvidenciaVazquezHernandez{}
+\end{tabular}
+}
+Ahora, continuando con el trabajo de {\it literate programming}. 
+Se simulará que algunos estudiantes, entregaron la siguiente 
+evidencia, es decir, lo que sería la evidencia 1.\par
+\eject\noindent\Evidencia{Programa que indica nombre del día de la 
+semana}\par
+\Centrar{
+\begin{tabular}{|l|p{2in}|}\hline
+\EvidenciaAntonioCoutinio{Evidencia \the\NumDEvid\ simulada:
+\the\AntonioCoutinioDanielEvidCount}
+\end{tabular}
+}
+\end{document}
